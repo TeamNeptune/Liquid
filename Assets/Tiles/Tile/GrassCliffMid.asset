@@ -4,14 +4,15 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: GrassCliffMid
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 2c7014443e97a954eaf177ca46746c46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99f26329430965140934b29217a84be7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
