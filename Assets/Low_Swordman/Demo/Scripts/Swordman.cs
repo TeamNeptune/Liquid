@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Swordman : PlayerController
 {
-
- 
-
     private void Start()
     {
 
         m_CapsulleCollider  = this.transform.GetComponent<CapsuleCollider2D>();
         m_Anim = this.transform.Find("model").GetComponent<Animator>();
         m_rigidbody = this.transform.GetComponent<Rigidbody2D>();
-  
 
+        placeWater = this.transform.Find("WaterPlacer").GetComponent<PlaceWater>();
+        removeWater = this.transform.Find("WaterRemover").GetComponent<RemoveWater>();
     }
 
 
@@ -42,7 +40,7 @@ public class Swordman : PlayerController
 
 
 
-        if (Input.GetKeyDown(KeyCode.S))  //아래 버튼 눌렀을때. 
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))  //아래 버튼 눌렀을때. 
         {
 
             IsSit = true;
@@ -50,7 +48,7 @@ public class Swordman : PlayerController
 
 
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
 
             m_Anim.Play("Idle");
@@ -81,13 +79,28 @@ public class Swordman : PlayerController
         GroundCheckUpdate();
 
 
-        if (!m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (!m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack")
+            && !m_Anim.GetCurrentAnimatorStateInfo(0).IsName("PlaceWater")
+            && !m_Anim.GetCurrentAnimatorStateInfo(0).IsName("RemoveWater"))
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
 
 
                 m_Anim.Play("Attack");
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                if (waterAmount >= maxWaterAmount)
+                {
+                    if (placeWater.Check())
+                        m_Anim.Play("PlaceWater");
+                }
+                else
+                {
+                    if (removeWater.Check(1))
+                        m_Anim.Play("RemoveWater");
+                }
             }
             else
             {
@@ -116,7 +129,7 @@ public class Swordman : PlayerController
 
         // 기타 이동 인풋.
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
 
             if (isGrounded)  // 땅바닥에 있었을때. 
@@ -145,12 +158,12 @@ public class Swordman : PlayerController
             if (m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                 return;
 
-            if (!Input.GetKey(KeyCode.A))
+            if (!(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
                 Filp(false);
 
 
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
 
 
@@ -177,7 +190,7 @@ public class Swordman : PlayerController
             if (m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                 return;
 
-            if (!Input.GetKey(KeyCode.D))
+            if (!(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
                 Filp(true);
 
 

@@ -45,51 +45,51 @@ public class Demo_GM : MonoBehaviour {
     public void KeyUPDownchange()
     {
         // wsad
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
             Color myColor = new Color32(255, 255, 255, 255);
 
             Demo_GM.Gm.UIImage[2].color = myColor;
         }
-        if (Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             Color myColor = new Color32(255, 255, 255, 255);
 
             Demo_GM.Gm.UIImage[3].color = myColor;
         }
 
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             Color myColor = new Color32(255, 255, 255, 255);
 
             Demo_GM.Gm.UIImage[0].color = myColor;
         }
-        if (Input.GetKeyUp(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             Color myColor = new Color32(255, 255, 255, 255);
 
             Demo_GM.Gm.UIImage[1].color = myColor;
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Color myColor = new Color32(180, 180, 180, 255);
 
             Demo_GM.Gm.UIImage[2].color = myColor;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             Color myColor = new Color32(180, 180, 180, 255);
 
             Demo_GM.Gm.UIImage[3].color = myColor;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Color myColor = new Color32(180, 180, 180, 255);
 
             Demo_GM.Gm.UIImage[0].color = myColor;
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             Color myColor = new Color32(180, 180, 180, 255);
 

@@ -16,6 +16,12 @@ public abstract class PlayerController :MonoBehaviour
     protected CapsuleCollider2D m_CapsulleCollider;
     protected Animator m_Anim;
 
+    public int maxWaterAmount = 100;
+    public int waterAmount = 100;
+
+    protected PlaceWater placeWater;
+    protected RemoveWater removeWater;
+
     [Header("[Setting]")]
     public float MoveSpeed = 6;
     public int JumpCount = 2;
@@ -89,7 +95,7 @@ public abstract class PlayerController :MonoBehaviour
         if (!isGrounded)
             return;
 
-
+        /*
         if (!Is_DownJump_GroundCheck)
         {
             m_Anim.Play("Jump");
@@ -102,7 +108,7 @@ public abstract class PlayerController :MonoBehaviour
             StartCoroutine(GroundCapsulleColliderTimmerFuc());
 
         }
-
+        */
 
     }
 
@@ -175,7 +181,16 @@ public abstract class PlayerController :MonoBehaviour
 
     }
 
+    public void PlaceWater()
+    {
+        placeWater.GenerateLiquid(waterAmount);
+        waterAmount = 0;
+    }
 
+    public void RemoveWater()
+    {
+        waterAmount += removeWater.RemoveLiquid(maxWaterAmount - waterAmount);
+    }
 
     protected abstract void LandingEvent();
 
