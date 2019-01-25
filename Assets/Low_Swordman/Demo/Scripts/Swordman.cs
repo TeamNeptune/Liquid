@@ -13,6 +13,8 @@ public class Swordman : PlayerController
 
         placeWater = this.transform.Find("WaterPlacer").GetComponent<PlaceWater>();
         removeWater = this.transform.Find("WaterRemover").GetComponent<RemoveWater>();
+
+        mask = this.transform.Find("model/body/Head/Hat-Helmet/Mask/MaskObj");
     }
 
 
@@ -30,7 +32,7 @@ public class Swordman : PlayerController
 
         }
 
-
+        mask.transform.localScale = new Vector3(1, (float)waterAmount / maxWaterAmount, 1);
 
 
     }
