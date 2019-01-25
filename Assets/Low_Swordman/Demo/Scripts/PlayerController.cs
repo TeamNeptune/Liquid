@@ -166,7 +166,7 @@ public abstract class PlayerController :MonoBehaviour
                 else
                 {
 
-                    Debug.Log("地面に触れてないのでジャンプできません");
+                    //Debug.Log("地面に触れてないのでジャンプできません");
 
                 }
 
