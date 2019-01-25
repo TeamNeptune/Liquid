@@ -22,6 +22,8 @@ public abstract class PlayerController :MonoBehaviour
     protected PlaceWater placeWater;
     protected RemoveWater removeWater;
 
+    protected Transform mask;
+
     [Header("[Setting]")]
     public float MoveSpeed = 6;
     public int JumpCount = 2;
