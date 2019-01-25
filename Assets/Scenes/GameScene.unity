@@ -1567,7 +1567,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.475942, y: 0.80051494}
+  m_Offset: {x: -1.475942, y: 0.9803064}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1578,7 +1578,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0456522, y: 2.2052102}
+  m_Size: {x: 2.0456522, y: 1.8456273}
   m_EdgeRadius: 0
 --- !u!114 &489528833
 MonoBehaviour:
@@ -41189,6 +41189,30 @@ PrefabInstance:
     - target: {fileID: 2050180692, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
       propertyPath: waterAmount
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818555813, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798294490, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798294490, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798294490, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992938, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05899811
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992938, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47999954
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}

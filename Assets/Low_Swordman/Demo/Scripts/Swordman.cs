@@ -7,7 +7,7 @@ public class Swordman : PlayerController
     private void Start()
     {
 
-        m_CapsulleCollider  = this.transform.GetComponent<CapsuleCollider2D>();
+        m_CapsulleCollider = this.transform.GetComponent<CapsuleCollider2D>();
         m_Anim = this.transform.Find("model").GetComponent<Animator>();
         m_rigidbody = this.transform.GetComponent<Rigidbody2D>();
 
@@ -75,7 +75,7 @@ public class Swordman : PlayerController
         m_MoveX = Input.GetAxis("Horizontal");
 
 
-   
+
         GroundCheckUpdate();
 
 
@@ -83,24 +83,22 @@ public class Swordman : PlayerController
             && !m_Anim.GetCurrentAnimatorStateInfo(0).IsName("PlaceWater")
             && !m_Anim.GetCurrentAnimatorStateInfo(0).IsName("RemoveWater"))
         {
+            //
+            //{
+
+
+            //    m_Anim.Play("Attack");
+            //}
+            //else
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                if (placeWater.Check())
+                    m_Anim.Play("PlaceWater");
+            }
             if (Input.GetKey(KeyCode.Mouse0))
             {
-
-
-                m_Anim.Play("Attack");
-            }
-            else if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                if (waterAmount >= maxWaterAmount)
-                {
-                    if (placeWater.Check())
-                        m_Anim.Play("PlaceWater");
-                }
-                else
-                {
-                    if (removeWater.Check(1))
-                        m_Anim.Play("RemoveWater");
-                }
+                if (removeWater.Check(1))
+                    m_Anim.Play("RemoveWater");
             }
             else
             {
@@ -140,7 +138,7 @@ public class Swordman : PlayerController
                 if (m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                     return;
 
-                transform.transform.Translate(Vector2.right* m_MoveX * MoveSpeed * Time.deltaTime);
+                transform.transform.Translate(Vector2.right * m_MoveX * MoveSpeed * Time.deltaTime);
 
 
 
@@ -228,7 +226,7 @@ public class Swordman : PlayerController
     }
 
 
-  
+
 
 
     protected override void LandingEvent()

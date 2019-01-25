@@ -36,11 +36,12 @@ public class PlaceWater : MonoBehaviour
         float sqrt = Mathf.Max(1, Mathf.Sqrt(numLiquid));
         for (int i = 0; i < numLiquid; i++)
         {
-            GameObject temp = Instantiate(_prefab, _pool.transform) as GameObject;
-            float x = Mathf.Lerp(bounds.min.x, bounds.max.x, (i % (int)sqrt) / sqrt) * transform.localScale.x;
-            float y = Mathf.Lerp(bounds.min.y, bounds.max.y, (i / (int)sqrt) / sqrt) * transform.localScale.y;
-            temp.transform.position = transform.position + new Vector3(x, y, 0);
+            GameObject temp = Instantiate(_prefab, transform) as GameObject;
+            float x = Mathf.Lerp(bounds.min.x, bounds.max.x, (i % (int)sqrt) / sqrt);
+            float y = Mathf.Lerp(bounds.min.y, bounds.max.y, (i / (int)sqrt) / sqrt);
             temp.transform.localScale *= _size;
+            temp.transform.localPosition = new Vector3(x, -y, 0);
+            temp.transform.parent = _pool.transform;
         }
     }
 }
