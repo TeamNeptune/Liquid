@@ -41190,6 +41190,30 @@ PrefabInstance:
       propertyPath: waterAmount
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1818555813, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798294490, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798294490, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798294490, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992938, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05899811
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992938, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47999954
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4637cc99abd744f9484f62e3f79207, type: 3}
 --- !u!1001 &7750574245531356436
