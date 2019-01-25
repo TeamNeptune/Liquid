@@ -9,12 +9,10 @@ public class PlaceWater : MonoBehaviour
     public GameObject _pool;
 
     BoxCollider2D col2d;
-    Bounds bounds;
 
     void Start()
     {
         col2d = GetComponent<BoxCollider2D>();
-        bounds = col2d.bounds;
     }
 
     public bool Check()
@@ -33,15 +31,15 @@ public class PlaceWater : MonoBehaviour
 
     public void GenerateLiquid(int numLiquid)
     {
+        var bounds = col2d.bounds;
         float sqrt = Mathf.Max(1, Mathf.Sqrt(numLiquid));
         for (int i = 0; i < numLiquid; i++)
         {
-            GameObject temp = Instantiate(_prefab, transform) as GameObject;
+            GameObject temp = Instantiate(_prefab, _pool.transform) as GameObject;
             float x = Mathf.Lerp(bounds.min.x, bounds.max.x, (i % (int)sqrt) / sqrt);
             float y = Mathf.Lerp(bounds.min.y, bounds.max.y, (i / (int)sqrt) / sqrt);
             temp.transform.localScale *= _size;
-            temp.transform.localPosition = new Vector3(x, -y, 0);
-            temp.transform.parent = _pool.transform;
+            temp.transform.position = new Vector3(x, y, 0);
         }
     }
 }
