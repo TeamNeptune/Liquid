@@ -14,7 +14,7 @@ public abstract class PlayerController :MonoBehaviour
     protected float m_MoveX;
     public Rigidbody2D m_rigidbody;
     protected CapsuleCollider2D m_CapsulleCollider;
-    protected Animator m_Anim;
+    public Animator m_Anim;
 
     public int maxWaterAmount = 100;
     public int waterAmount = 100;
