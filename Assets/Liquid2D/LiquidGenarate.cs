@@ -2,27 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LiquidGenarate : MonoBehaviour {
+public class LiquidGenarate : MonoBehaviour
+{
     public int _numLiquid = 10;
-    public float _size = 1;
-    public GameObject _prefab;
-    public GameObject _pool;
+    LiquidContent content;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         var col = GetComponent<BoxCollider2D>();
+        content = GameObject.Find("LiquidContent").GetComponent<LiquidContent>();
         GenerateLiquid(_numLiquid, col.bounds);
-	}
+    }
 
     public void GenerateLiquid(int numLiquid, Bounds bounds)
     {
         for (int i = 0; i < numLiquid; i++)
         {
-            GameObject temp = Instantiate(_prefab, _pool.transform) as GameObject;
-            float x = Random.Range(bounds.min.x, bounds.max.x);
-            float y = Random.Range(bounds.min.y, bounds.max.y);
-            temp.transform.localPosition = new Vector3(x, y, 0);
-            temp.transform.localScale *= _size;
+            content.GenerateLiquidOne(new Vector2(
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(bounds.min.y, bounds.max.y)
+            ));
         }
     }
 }
