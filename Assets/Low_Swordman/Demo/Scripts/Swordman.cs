@@ -140,7 +140,7 @@ public class Swordman : PlayerController
                 if (m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                     return;
 
-                transform.transform.Translate(Vector2.right * m_MoveX * MoveSpeed * Time.deltaTime);
+                m_rigidbody.velocity = new Vector2(m_MoveX * MoveSpeed, m_rigidbody.velocity.y);
 
 
 
@@ -148,7 +148,7 @@ public class Swordman : PlayerController
             else
             {
 
-                transform.transform.Translate(new Vector3(m_MoveX * MoveSpeed * Time.deltaTime, 0, 0));
+                m_rigidbody.velocity = new Vector2(m_MoveX * MoveSpeed, m_rigidbody.velocity.y);
 
             }
 
@@ -176,13 +176,13 @@ public class Swordman : PlayerController
                     return;
 
 
-                transform.transform.Translate(Vector2.right * m_MoveX * MoveSpeed * Time.deltaTime);
+                m_rigidbody.velocity = new Vector2(m_MoveX * MoveSpeed, m_rigidbody.velocity.y);
 
             }
             else
             {
 
-                transform.transform.Translate(new Vector3(m_MoveX * MoveSpeed * Time.deltaTime, 0, 0));
+                m_rigidbody.velocity = new Vector2(m_MoveX * MoveSpeed, m_rigidbody.velocity.y);
 
             }
 
