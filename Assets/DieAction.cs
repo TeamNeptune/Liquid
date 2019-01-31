@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class DieAction : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        var rigid = animator.gameObject.GetComponentInParent<PlayerController>().m_rigidbody;
+        rigid.isKinematic = true;
+        rigid.velocity = Vector3.zero;
+        Camera.main.GetComponent<CameraController>().Smoothvalue *= 10;
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
