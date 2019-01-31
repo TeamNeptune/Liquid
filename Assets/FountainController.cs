@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FountainController : MonoBehaviour
 {
-    LiquidGenarate generator;
+    LiquidContent generator;
     public Vector3 velocity = Vector3.up * 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        generator = GameObject.Find("LiquidGenerator").GetComponent<LiquidGenarate>();
+        generator = GameObject.Find("LiquidContent").GetComponent<LiquidContent>();
     }
 
     // Update is called once per frame
