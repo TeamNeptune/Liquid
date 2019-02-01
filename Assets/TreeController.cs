@@ -10,10 +10,12 @@ public class TreeController : MonoBehaviour
     public int amount = 0;
     public int amountMax = 100;
     SpriteRenderer render;
+    ParticleSystem particle;
 
     void Start()
     {
         render = GetComponent<SpriteRenderer>();
+        particle = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -35,6 +37,7 @@ public class TreeController : MonoBehaviour
             {
                 grows++;
                 amount -= amountMax;
+                particle.Play();
             }
 
             grows = Mathf.Min(grows, treeSprites.Count - 1);
